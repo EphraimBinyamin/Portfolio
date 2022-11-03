@@ -1,0 +1,144 @@
+// === Main ===
+.portfolio {
+    background-color: $grey_bg;
+    &__text {
+        width: 500px;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+    }
+    &__tabs {
+        margin-top: 50px;
+        &-btns {
+            width: 750px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+        &-btn {
+            &.active {
+                color: $white;
+                background-color: $black;
+            }
+        }
+        &-tab {
+            display: none;
+            justify-content: center;
+            grid-template: auto / repeat(auto-fit , minmax(auto , 350px));
+            grid-auto-rows: auto;
+            gap: 25px;
+            margin-top: 50px;
+            &.active {
+                display: grid;
+            }
+        }
+        &-item {
+            box-shadow: 0 15px 20px rgba(2, 57, 87, 0.15);
+            position: relative;
+            width: 100%;
+            &:hover {
+                .portfolio__tabs {
+                    &-item {
+                        &-img {
+                            &:before {
+                                opacity: 0.5;
+                            }
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                        &-title {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &-img {
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 5;
+                    background-color: $black;
+                    opacity: 0;
+                    transition: $transition-md;
+                }
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: $transition-sm;
+                }
+            }
+            &-title {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 5;
+                transform: translate(-50% , -50%);
+                font-size: 24px;
+                color: $white;
+                opacity: 0;
+                transition: $transition-md;
+            }
+        }
+    }
+}
+// === / Main ===
+
+// === Media ===
+@media (max-width: 991px) {
+    .portfolio {
+        &__tabs {
+            &-btns {
+                width: 710px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio {
+        &__tabs {
+            &-btns {
+                width: 350px;
+            }
+            &-btn {
+                &:nth-child(n+3) {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .portfolio {
+        &__tabs {
+            &-btns {
+                width: 280px;
+            }
+            &-btn {
+                width: 130px;
+                &:nth-child(n+3) {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+// === / Media ===

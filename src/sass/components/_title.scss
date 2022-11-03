@@ -1,0 +1,17 @@
+.title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    &--fz52 {
+        font-size: 52px;
+    }
+    &--fz34 {
+        font-size: 34px;
+    }
+    &--fz24 {
+        font-size: 24px;
+    }
+    &--center {
+        text-align: center;
+        margin: 0 auto;
+    }
+}

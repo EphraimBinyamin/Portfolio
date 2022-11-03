@@ -1,0 +1,13 @@
+// === Logo ===
+.logo {
+    display: block;
+    color: $black;
+    font-family: "Zen Tokyo Zoo";
+    font-size: 45px;
+    padding-left: 20px;
+    margin-bottom: -5px;
+    &:hover {
+        color: $black;
+    }
+}
+// === / Logo ===
