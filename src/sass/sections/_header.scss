@@ -56,6 +56,7 @@
     }
     &__btn {
         color: $white;
+        background-color: transparent;
         border-color: $white;
         transition: $transition-sm;
         &:hover {
@@ -96,6 +97,30 @@
         &__subtitle {
             font-size: 30px;
             margin-top: 20px;
+        }
+        &__btn {
+            &:hover {
+                color: $white;
+                background-color: transparent;
+            }
+            &:active {
+                color: $black;
+                background-color: $white;
+            }
+        }
+        &__github {
+            svg {
+                &:hover {
+                    path {
+                        fill: $white;
+                    }
+                }
+                &:active {
+                    path {
+                        fill: darken($white , 20%);
+                    }
+                }
+            }
         }
     }
 }

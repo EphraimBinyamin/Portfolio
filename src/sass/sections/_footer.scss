@@ -26,6 +26,7 @@
                 margin-top: 25px;
             }
             a {
+                color: #000;
                 transition: $transition-sm;
                 &:hover {
                     color: grey;
@@ -52,12 +53,15 @@
                 height: 100%;
                 object-fit: cover;
                 path {
+                    fill: #000;
                     transition: $transition-sm;
                 }
             }
             &:hover {
-                path {
-                    fill: grey;
+                svg {
+                    path {
+                        fill: grey;
+                    }
                 }
             }
             &:first-child {
@@ -78,6 +82,34 @@
     .footer {
         &__contact {
             margin-left: 0;
+            &-item {
+                a {
+                    &:hover {
+                        color: #000;
+                    }
+                    &:active {
+                        color: grey;
+                    }
+                }
+            }
+        }
+        &__social {
+            &-item {
+                &:hover {
+                    svg {
+                        path {
+                            fill: #000;
+                        }
+                    }
+                }
+                &:active {
+                    svg {
+                        path {
+                            fill: grey;
+                        }
+                    }
+                }
+            }
         }
     }
 }
