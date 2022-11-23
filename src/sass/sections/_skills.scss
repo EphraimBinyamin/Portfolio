@@ -50,56 +50,5 @@
             text-align: center;
             margin-top: 24px;
         }
-        &-stars {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-        }
-        &-star {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 26px;
-            height: 26px;
-            &:not(:last-child) {
-                margin-right: 9px;
-            }
-            &-html {
-                &:nth-child(-n+4) {
-                    path {
-                        fill: $black;
-                    }
-                }
-            }
-            &-css {
-                &:nth-child(-n+4) {
-                    path {
-                        fill: $black;
-                    }
-                }
-            }
-            &-js {
-                &:nth-child(-n+3) {
-                    path {
-                        fill: $black;
-                    }
-                }
-            }
-            &-sass {
-                &:nth-child(-n+4) {
-                    path {
-                        fill: $black;
-                    }
-                }
-            }
-            &-bootstrap {
-                &:nth-child(-n+3) {
-                    path {
-                        fill: $black;
-                    }
-                }
-            }
-        }
     }
 }

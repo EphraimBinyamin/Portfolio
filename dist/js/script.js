@@ -30,6 +30,15 @@ window.addEventListener("scroll" , () => {
 });
 // === / Navbar Module ===
 
+// === Resume Button ===
+let resumeBtn = document.querySelector(".header__resume-title");
+let resume = document.querySelector(".header__resume");
+
+resumeBtn.addEventListener('click' , () => {
+    resume.classList.toggle('active');
+});
+// === / Resume Button ===
+
 // === Portfolio Tabs ===
 let portfolioTabsBtns = document.querySelectorAll(".portfolio__tabs-btn");
 let portfolioTabs = document.querySelectorAll(".portfolio__tabs-tab");

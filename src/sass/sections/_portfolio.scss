@@ -40,43 +40,18 @@
             }
         }
         &-item {
-            box-shadow: 0 15px 20px rgba(2, 57, 87, 0.15);
-            position: relative;
+            transform: scale(1);
             width: 100%;
+            box-shadow: 0 15px 20px rgba(2, 57, 87, 0.15);
+            transition: all 0.3s;
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            overflow: hidden;
             &:hover {
-                .portfolio__tabs {
-                    &-item {
-                        &-img {
-                            &:before {
-                                opacity: 0.5;
-                            }
-                            img {
-                                transform: scale(1.1);
-                            }
-                        }
-                        &-title {
-                            opacity: 1;
-                        }
-                    }
-                }
+                transform: scale(1.05);
             }
             &-img {
-                position: relative;
-                cursor: pointer;
-                overflow: hidden;
                 width: 100%;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    z-index: 5;
-                    background-color: $black;
-                    opacity: 0;
-                    transition: $transition-md;
-                }
                 img {
                     width: 100%;
                     height: 100%;
@@ -84,16 +59,62 @@
                     transition: $transition-sm;
                 }
             }
+            &-content {
+                border-top: 1px solid lightgrey;
+                padding: 20px;
+            }
             &-title {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                z-index: 5;
-                transform: translate(-50% , -50%);
-                font-size: 24px;
-                color: $white;
-                opacity: 0;
-                transition: $transition-md;
+                color: $black;
+                font-size: 20px;
+                text-align: center;
+                font-weight: 500;
+            }
+            &-descr {
+                font-size: 17px;
+                line-height: 23px;
+                text-align: center;
+                margin-top: 15px;
+            }
+            &-tags {
+                font-size: 15px;
+                text-align: center;
+                margin-top: 15px;
+            }
+            &-btns {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+            &-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 38px;
+                color: $black;
+                background-color: transparent;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 6px 12px;
+                transition: all 0.3s;
+                &:first-child {
+                    margin-right: 15px;
+                    .portfolio__tabs-item-btn-icon {
+                        transition: all 0.3s;
+                    }
+                }
+                &:hover {
+                    color: $white;
+                    background-color: $black;
+                    .portfolio__tabs-item-btn-icon {
+                        fill: $white;
+                    }
+                }
+                &-icon {
+                    display: block;
+                    fill: $black;
+                    margin-right: 5px;
+                }
             }
         }
     }
@@ -120,6 +141,24 @@
             &-btn {
                 &:nth-child(n+3) {
                     margin-top: 20px;
+                }
+            }
+            &-item {
+                &-btn {
+                    &:hover {
+                        color: $black;
+                        background-color: transparent;
+                        .portfolio__tabs-item-btn-icon {
+                            fill: $black;
+                        }
+                    }
+                    &:active {
+                        color: $white;
+                        background-color: $black;
+                        .portfolio__tabs-item-btn-icon {
+                            fill: $white;
+                        }
+                    }
                 }
             }
         }

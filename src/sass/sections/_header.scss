@@ -64,24 +64,59 @@
             background-color: $white;
         }
     }
-    &__github {
-        position: absolute;
-        top: 8px;
-        right: -45px;
-        width: 30px;
-        height: 30px;
-        svg {
-            path {
-                fill: $white;
-                transition: $transition-sm;
-            }
-            &:hover {
-                path {
-                    fill: darken($white , 20%);
+    &__resume {
+        position: relative;
+        color: $white;
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0 auto;
+        &-title {
+            position: relative;
+            z-index: 5;
+            margin-top: 25px;
+            text-align: center;
+        }
+        &-lang {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+            opacity: 0;
+            &-item {
+                width: 75px;
+                border-radius: 0;
+                &:hover {
+                    color: $black;
+                }
+                &:first-child {
+                    border-bottom-left-radius: 4px;
+                }
+                &:last-child {
+                    border-left: none;
+                    border-bottom-right-radius: 4px;
                 }
             }
         }
         
+    }
+}
+
+.active {
+    .header__resume-title {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0;
+    }
+    .header__resume-lang {
+        opacity: 1;
+        top: 150%;
     }
 }
 // === / Main ===
