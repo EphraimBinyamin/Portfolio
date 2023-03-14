@@ -68,4 +68,10 @@ gulp.task('images', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images'));
+gulp.task('resume', function() {
+    return gulp.src("src/resume/**/*")
+        .pipe(gulp.dest("dist/resume"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images', 'resume'));
